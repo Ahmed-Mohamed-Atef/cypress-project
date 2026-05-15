@@ -20,11 +20,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
+
+      - name: Remove ts-loader
+        run: npm uninstall ts-loader
 
       - name: Run Cypress BDD Tests
         run: npx cypress run
