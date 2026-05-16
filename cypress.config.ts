@@ -3,6 +3,12 @@ import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
+// Polyfill for Node.js environments where globalThis.crypto is missing (e.g., Node 18.18)
+import * as crypto from 'crypto';
+if (typeof globalThis.crypto === 'undefined') {
+  globalThis.crypto = crypto.webcrypto as unknown as Crypto;
+}
+
 export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
