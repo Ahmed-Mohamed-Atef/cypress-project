@@ -38,6 +38,8 @@
   "weakPass":"Test1@",
   
   "loginUrl":"https://practicesoftwaretesting.com/auth/login",
-  "loginTitle":"Login - Practice Software Testing - Toolshop - v5.0"
+  "loginTitle":"Practice Software Testing - Toolshop - v5.0",
+  "loginEmail": "customer@practicesoftwaretesting.com",
+  "loginPassword": "welcome01"
   
 }

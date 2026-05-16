@@ -1,6 +1,6 @@
 class login {
     email() {
-        cy.email().type(data.registerEmail)
+        cy.email().type(data.loginEmail)
     }
     invalidEmailFormat() {
         cy.email().type('notanemail')
@@ -12,7 +12,7 @@ class login {
         cy.password().type('wrongpassword')
     }
     password() {
-        cy.password().type(data.password)
+        cy.password().type(data.loginPassword)
     }
     submit() {
         cy.loginButton().click()
